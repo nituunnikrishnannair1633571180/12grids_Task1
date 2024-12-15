@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://www.google.com/recaptcha/api.js " async defer></script>
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Sticky Logo */
+        .sticky-logo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .sticky-logo img {
+            height: 50px;
+        }
+
+        .sticky-logo span {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-left: 10px;
+            color: #007bff;
+        }
+
+        /* Header Section */
+        .contact-header {
+            position: relative;
+            text-align: center;
+            color: white;
+            margin-top: 80px; /* Offset for sticky logo */
+        }
+
+        .contact-header img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .contact-header h1 {
+            position: absolute;
+            top: 75%;
+            left: 5%;
+            transform: translateY(-50%);
+            font-size: 3.5rem;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 40px 20px;
+        }
+
+        .contact-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .contact-left h2 {
+            font-weight: bold;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-left p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Form Styling */
+        .submit-btn {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Map Section */
+        .map-container {
+            margin-top: 40px;
+            height: 400px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .location-card {
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .location-icon {
+            margin-right: 8px;
+        }
+
+        .image-container {
+            position: relative;
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .main-office {
+            display: flex;
+            align-items: center;
+        }
+
+        .location-card-overlap {
+            margin-right: -60px; /* Slight overlap */
+            z-index: 3;
+        }
+
+        @media (max-width: 768px) {
+            .main-office {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .location-card-overlap {
+                margin: 0 auto;
+                margin-bottom: 1rem;
+            }
+        }
+
+        .advent-footer {
+            text-align: center;
+            padding: 20px;
+            color: #007bff;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Logo -->
+    <div class="sticky-logo">
+        <img src="advent-logo1.png" alt="Advent Logo">
+        
+    </div>
+
+    <!-- Header Section -->
+    <section class="contact-header">
+        <img src="City1.png" alt="City Image">
+        <h1>Contact Us</h1>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section container">
+        <div class="row">
+            <!-- Left Side: Text -->
+            <div class="col-md-5 contact-left">
+                <h2>Drop us a message</h2>
+                <p>We’ll get back to you in no time.</p>
+            </div>
+
+            <!-- Right Side: Contact Form -->
+            <div class="col-md-7">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control" placeholder="Your Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control" placeholder="Organization Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Contact Number">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email ID">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="4" placeholder="Message"></textarea>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="emailUpdates">
+                        <label class="form-check-label" for="emailUpdates">Send me updates via email</label>
+                    </div>
+                    <button type="submit" class="btn submit-btn mt-3">Submit</button>
+                
+                <!-- reCAPTCHA -->
+                <div class="g-recaptcha" data-sitekey="6LfPU5wqAAAAAHiRRDPo52rjtn1puGEtuXyRxP4W"></div>
+                
+            </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-container container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.6441647870146!2d73.0120924!3d19.1457475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7bf5f385221f9%3A0xf99ee0f134be9678!2sAdvent%20Chembio%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1702624400000!5m2!1sen!2sin" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <div class="container my-5">
+        <!-- First Row: Main Office -->
+        <div class="row mb-4 main-office">
+            
+
+            <div class="col-lg-6 col-md-12 order-1 order-lg-2">
+                <div class="image-container">
+                    <img src="Build.png" alt="Advent Building" class="img-fluid small-image">
+                </div>
+            </div>
+            
+            <!-- <style>
+                .small-image {
+                    max-width: 60%; /* Adjust to your preferred size */
+                    height: auto;
+                }
+            </style> -->
+            
+    
+            
+            <div class="col-lg-6 col-md-12 order-2 order-lg-1">
+                <div class="location-card location-card-overlap">
+                    <h5><strong>Advent Chembio Pvt. Ltd.</strong></h5>
+                    <p>W-288, T.T.C. Industrial Area, MIDC Industrial Area, Rabale, Navi Mumbai, Maharashtra 400701</p>
+                    <p><i class="fa-solid fa-phone location-icon"></i> +91 7777084837</p>
+                    <p>
+                        <i class="fa-brands fa-linkedin location-icon"></i>
+                        <i class="fa-brands fa-twitter location-icon"></i>
+                        <i class="fa-brands fa-youtube location-icon"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Second Row: Manufacturing Facility and Central Warehouse -->
+        <div class="row g-4">
+            <!-- FDA Approved Facility -->
+            <div class="col-md-6">
+                <div class="location-card">
+                    <h5><strong>FDA approved manufacturing facility</strong></h5>
+                    <p>W-279, MIDC, TTC Rabale, Navi Mumbai - 400701, Bharat</p>
+                    <p><i class="fa-solid fa-phone location-icon"></i> +91 7777084837</p>
+                </div>
+            </div>
+    
+            <!-- Central Warehouse -->
+            <div class="col-md-6">
+                <div class="location-card">
+                    <h5><strong>Central Warehouse</strong></h5>
+                    <p>Sri Arihant Complex, Building No.I-12 Gala No. 1 to 5, Kalher village, at Kopar Bhiwandi, Thane - 421302</p>
+                    <p><i class="fa-solid fa-phone location-icon"></i> +91 7777084837</p>
+                </div>
+            </div>
+        </div>
+    </div>
+     
+    <!-- Footer -->
+    <div class="advent-footer">
+        <img src="advent-logo1.png" alt="Advent Logo">  
+    </div>
+
+    
+       
+    
+    <!-- Bootstrap JS and Dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
